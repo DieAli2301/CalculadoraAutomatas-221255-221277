@@ -6,12 +6,12 @@ function Calculator() {
     const [lexResult, setLexResult] = useState([]);
     const [operations, setOperations] = useState([]);
     const [operationTree, setOperationTree] = useState("");
-    const [operationElements, setOperationElements] = useState([]); // Nuevo estado
+    const [operationElements, setOperationElements] = useState([]); 
 
     const handleClick = (e) => {
         setInput(input + e.target.name);
         setLexResult([...lexResult, e.target.name]);
-        setOperationElements([...operationElements, e.target.name]); // Agregar el elemento a operationElements
+        setOperationElements([...operationElements, e.target.name]);
     }
 
     const calculate = () => {
