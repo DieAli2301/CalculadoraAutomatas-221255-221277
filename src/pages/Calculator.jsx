@@ -77,33 +77,33 @@ function Calculator() {
                     </div>
                     <div style={{paddingTop: '3rem'}}>
                         <div className="buttons">
-                            <button name="1" onClick={handleClick}>1</button>
-                            <button name="2" onClick={handleClick}>2</button>
-                            <button name="3" onClick={handleClick}>3</button>
+                            <button name="0" onClick={handleClick}>0</button>
+                            <button name="(" onClick={handleClick}>(</button>
+                            <button name=")" onClick={handleClick}>)</button>
                             <button name="+" onClick={handleClick}>+</button>
-                        </div>
-                        <div className="buttons">
-                            <button name="4" onClick={handleClick}>4</button>
-                            <button name="5" onClick={handleClick}>5</button>
-                            <button name="6" onClick={handleClick}>6</button>
-                            <button name="-" onClick={handleClick}>-</button>
                         </div>
                         <div className="buttons">
                             <button name="7" onClick={handleClick}>7</button>
                             <button name="8" onClick={handleClick}>8</button>
                             <button name="9" onClick={handleClick}>9</button>
+                            <button name="-" onClick={handleClick}>-</button>
+                        </div>
+                        <div className="buttons">
+                            <button name="4" onClick={handleClick}>4</button>
+                            <button name="5" onClick={handleClick}>5</button>
+                            <button name="6" onClick={handleClick}>6</button>
                             <button name="*" onClick={handleClick}>*</button>
                         </div>
                         <div className="buttons">
+                            <button name="1" onClick={handleClick}>1</button>
+                            <button name="2" onClick={handleClick}>2</button>
+                            <button name="3" onClick={handleClick}>3</button>
                             <button name="." onClick={handleClick}>.</button>
-                            <button name="0" onClick={handleClick}>0</button>
-                            <button name="(" onClick={handleClick}>(</button>
-                            <button name=")" onClick={handleClick}>)</button>
                         </div>
                         <div className="buttons">
                             <button onClick={clear}>AC</button>
                             <button name="/" onClick={handleClick}>/</button> 
-                            <button style={{ width: "18rem"}} onClick={calculate}>=</button>
+                            <button style={{ width: "18rem" }} onClick={calculate}>=</button>
                         </div>
                     </div>
                 </div>
@@ -112,13 +112,13 @@ function Calculator() {
                     {operations.map((operation, index) => (
                         <p className="estiloImpresion" key={index}>{index + 1}.- {operation}</p>
                     ))}
-                    <div style={{ boxShadow: '10px 10px 15px rgba(164, 77, 193, 0.5)', borderRadius: '1px', border: '3px solid purple', height:'20rem', width:'20rem' }}>
-                        <h4 className='tituloOperaciones'>Generador Arbol</h4>
+                    <div style={{  height:'20rem', width:'20rem' }}>
+                        <h4 className='tituloOperaciones'>Arbol de derivacion:</h4>
                         <pre className="estiloImpresion">{operationTree}</pre>
                     </div>
                 </div>
                 <div id="Token">
-                    <h3 className='tituloToken'>Token</h3>
+                    <h3 className='tituloToken'>Resultado lexico</h3>
                     {operationElements.map((element, index) => {
                         const tokenType = getTokenType(element);
                         return (
